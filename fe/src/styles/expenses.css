@@ -1,0 +1,291 @@
+.expenses-container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #059669;
+}
+
+/* Grouping Styles */
+.year-section {
+  margin-bottom: 40px;
+}
+
+.year-title {
+  font-size: 1.8rem;
+  color: #1e293b;
+  border-bottom: 3px solid #3b82f6;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.month-section {
+  margin-left: 20px;
+  margin-bottom: 24px;
+}
+
+.month-title {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+/* List Item Styles */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  border: 1px solid #f1f5f9;
+}
+
+.expense-item:hover {
+  transform: translateX(5px);
+  border-color: #cbd5e1;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.item-date {
+  background: #f1f5f9;
+  color: #475569;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.item-category {
+  flex: 1; /* Mengambil ruang sisa agar elemen setelahnya terdorong ke kanan */
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.item-amount {
+  font-weight: 700;
+  color: #0f172a;
+  min-width: 120px;
+  text-align: right;
+}
+
+/* Action Buttons */
+.item-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.item-actions button {
+  background: none;
+  border: 1px solid #e2e8f0;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.item-actions button:hover {
+  background-color: #f8fafc;
+  transform: scale(1.1);
+}
+
+/* Overlay dengan efek Glassmorphism */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4); /* Slate-900 dengan transparansi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(8px); /* Blur lebih kuat agar fokus ke modal */
+  padding: 20px;
+}
+
+/* Card Modal Modern */
+.modal-content {
+  background: #ffffff;
+  border-radius: 24px; /* Sudut lebih melengkung agar modern */
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  animation: modalScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header yang lebih elegan */
+.modal-header {
+  padding: 24px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.close-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: rotate(90deg);
+}
+
+/* Body: Grouping informasi agar rapi */
+.modal-body {
+  padding: 0 24px 24px;
+}
+
+.detail-row {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s;
+}
+
+.detail-row:hover {
+  transform: translateX(4px);
+  border-color: #e2e8f0;
+}
+
+.detail-row label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.detail-row p {
+  margin: 0;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+/* Highlight Khusus Nominal */
+.detail-row.amount-box {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  text-align: center;
+  padding: 20px;
+}
+
+.detail-row.amount-box label {
+  color: #3b82f6;
+  justify-content: center;
+}
+
+.detail-amount {
+  color: #1d4ed8 !important;
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+}
+
+.detail-desc {
+  font-style: italic;
+  color: #475569 !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+}
+
+/* Footer & Button */
+.modal-footer {
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-close-modal {
+  width: 100%;
+  background: #0f172a; /* Warna gelap agar kontras */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-close-modal:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}

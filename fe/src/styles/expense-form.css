@@ -1,0 +1,142 @@
+/* Container Utama */
+.form-container {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Form tidak terlalu ke bawah */
+  background-color: #f8fafc;
+  min-height: calc(100vh - 70px);
+}
+
+/* Membatasi Lebar Card Form */
+.form-card {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 480px; /* Ukuran ideal agar tidak terlalu lebar */
+  border: 1px solid #f1f5f9;
+}
+
+.form-card h2 {
+  margin-bottom: 24px;
+  color: #0f172a;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Spasi Antar Input */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Button Aesthetic */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btn-submit {
+  flex: 2;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-cancel {
+  flex: 1;
+  background-color: #ffffff;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+/* Styling Input & Textarea */
+input, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Pastikan pembungkusnya relatif agar list bisa melayang di bawahnya */
+.autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* List dropdown yang melayang */
+.suggestions-list {
+  position: absolute;
+  top: calc(100% + 4px); /* Muncul tepat di bawah border input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  list-style: none; /* Menghilangkan titik hitam (bullet points) */
+  padding: 6px;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999; /* Supaya menimpa input di bawahnya */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Setiap item kategori */
+.suggestions-list li {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #475569;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  list-style-type: none; /* Keamanan tambahan untuk menghapus titik */
+}
+
+/* Efek saat mouse diarahkan ke kategori */
+.suggestions-list li:hover {
+  background-color: #f1f5f9;
+  color: #3b82f6;
+}
+
+/* Scrollbar yang lebih tipis dan rapi */
+.suggestions-list::-webkit-scrollbar {
+  width: 5px;
+}
+.suggestions-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
