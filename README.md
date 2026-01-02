@@ -83,11 +83,19 @@ Memisahkan data ke dalam tabel-tabel spesifik yang saling berelasi.
   ```
 
   ### Backend Setup
+  ‼️**Perhatian**‼️
+
+  🚫**Pada saat setup tidak perlu membuat database secara manual terlebih dahulu**🚫
+  
+  Ikuti saja langkah-langkah berikut:
+
+
   - Masuk ke folder backend dan install dependensi:
      ```bash
       cd be
       npm install
      ```
+
   - Buat file `.env` dan konfigurasi file `.env`:
     ```env
     DB_USERNAME=
@@ -104,6 +112,9 @@ Memisahkan data ke dalam tabel-tabel spesifik yang saling berelasi.
     NODE_ENV=development
     PORT=3000
     ```
+
+    Isi DB_NAME dengan nama database yang ingin dibuat.
+
   - Membuat database, migrating, dan input seeders:
     ```bash
     npm run db:init
